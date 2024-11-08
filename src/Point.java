@@ -12,7 +12,9 @@ public class Point {
         this.y = y;
     }
 
+
     void paint(Graphics g) {
+
         g.drawOval(x, y, 1, 1);
     }
 

@@ -13,6 +13,7 @@ public class MyFrame extends JFrame implements MouseListener, MouseMotionListene
 
 
 
+
     public MyFrame(){
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -27,6 +28,7 @@ public class MyFrame extends JFrame implements MouseListener, MouseMotionListene
 
     @Override
     public void paint(Graphics g) {
+
         BufferStrategy bufferStrategy = getBufferStrategy();        // Обращаемся к стратегии буферизации
         if (bufferStrategy == null) {                               // Если она еще не создана
             createBufferStrategy(2);                                // то создаем ее
@@ -38,6 +40,7 @@ public class MyFrame extends JFrame implements MouseListener, MouseMotionListene
         //    Points.get(i).paint(g);
         //}
         for(int i=0; i<Curves.size();i++){
+            g.setColor(new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255)));
             for(int j=1; j<Curves.get(i).Points.size();j++) {
                 g.drawLine(Curves.get(i).Points.get(j-1).x, Curves.get(i).Points.get(j-1).y, Curves.get(i).Points.get(j).x, Curves.get(i).Points.get(j).y);
             }
